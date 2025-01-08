@@ -1,14 +1,14 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Initialize Firebase with your service account credentials
+#Initialize Firebase with your service account credentials
 cred = credentials.Certificate('ServiceAccountKey.json')
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
 
-# Function to store user data
+#Function to store user data
 def store_user_data(user_id, user_data):
     try:
         db.collection('users').document(user_id).set(user_data)
@@ -46,3 +46,7 @@ def read_user_data(user_id):
     
     except Exception as e:
         print(f"A error occurred: {e}")
+
+
+
+delete_user_data("123")
