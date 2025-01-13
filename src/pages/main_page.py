@@ -28,18 +28,16 @@ class MainPage(Screen):
         #TextInput para pesquisa
         search_box = TextInput(
             hint_text="Pesquisar...",
-            size_hint=(0.2, None),
-            height=40,
-            pos_hint={'x': 0.72, 'y': 0.85}  #Posicionando na área do ícone de lupa
+            size_hint=(0.13, 0.06),
+            pos_hint={'x': 0.78, 'y': 0.750}  #Posicionando na área do ícone de lupa
         )
         search_box.bind(text=self.filter_clients)
         layout.add_widget(search_box)
 
         #Botão invisível para "Adicionar Cliente"
         add_client_btn = Button(
-            size_hint=(0.15, None),
-            height=50,
-            pos_hint={'x': 0.05, 'y': 0.85},
+            size_hint=(0.17, 0.1),
+            pos_hint={'x': 0.12, 'y': 0.74},
             background_color=(0, 0, 0, 0)  #Totalmente invisível
         )
         add_client_btn.bind(on_release=self.go_to_add_client)
@@ -58,7 +56,7 @@ class MainPage(Screen):
             )
             self.client_list_layout.add_widget(client_label)
 
-        scroll_view = ScrollView(size_hint=(0.9, 0.65), pos_hint={'x': 0.05, 'y': 0.1})
+        scroll_view = ScrollView(size_hint=(0.761, 0.68), pos_hint={'x': 0.118, 'y': 0})
         scroll_view.add_widget(self.client_list_layout)
         layout.add_widget(scroll_view)
 

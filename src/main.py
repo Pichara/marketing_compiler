@@ -22,14 +22,15 @@ from pages.add_client_pages.add_client8 import AddClient8
 from pages.add_client_pages.add_client9 import AddClient9
 
 from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager
-from kivy.core.window import Window
+from kivy.uix.screenmanager import ScreenManager, NoTransition
+from kivy.base import EventLoop
 
 #Main App class with ScreenManager
 class MyApp(App):
     def build(self):
         # Initialize ScreenManager
         sm = ScreenManager()
+        sm = ScreenManager(transition=NoTransition())
 
         #All the pages
         sm.add_widget(MainPage(name="main"))
@@ -44,7 +45,19 @@ class MyApp(App):
         sm.add_widget(AddClient8(name="add_client_8"))
         sm.add_widget(AddClient9(name="add_client_9"))
 
+        sm.bind(on_touch_down=self.show_coordinates)
+
+
         return sm
+    
+    def show_coordinates(self, instance, touch):
+        if touch.button == 'right':  # Verifica se é o botão direito
+            normalized_x = touch.pos[0] / instance.width
+            normalized_y = touch.pos[1] / instance.height
+            print(f"Mouse Right Clicked at - X: {normalized_x:.3f}, Y: {normalized_y:.3f}")
+
+    
+
 
 #Run the app
 if __name__ == '__main__':
