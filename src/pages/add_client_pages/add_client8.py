@@ -5,7 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-
+from kivy.uix.textinput import TextInput
 
 class AddClient8(Screen):
     def __init__(self, **kwargs):
@@ -124,6 +124,48 @@ class AddClient8(Screen):
         next_button.bind(on_release=self.go_to_next_page)
 
         layout.add_widget(next_button)
+
+        #TextInputs
+        input_linguagem = TextInput(
+            hint_text="",
+            size_hint=(0.5, 0.2),
+            pos_hint={"x": 0.205, "y": 0.642},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_linguagem)
+
+
+        input_personalidade = TextInput(
+            hint_text="",
+            size_hint=(0.5, 0.2),
+            pos_hint={"x": 0.255, "y": 0.41},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_personalidade)
+
+
+        input_imagem = TextInput(
+            hint_text="",
+            size_hint=(0.5, 0.2),
+            pos_hint={"x": 0.174, "y": 0.180},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_imagem)
         
         self.add_widget(layout)
         

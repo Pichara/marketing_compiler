@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
 
 
 class AddClient7(Screen):
@@ -123,6 +124,61 @@ class AddClient7(Screen):
         next_button.bind(on_release=self.go_to_next_page)
 
         layout.add_widget(next_button)
+
+        #TextInputs
+        input_Tfunil = TextInput(
+            hint_text="",
+            size_hint=(0.5, 0.1),
+            pos_hint={"x": 0.05, "y": 0.574},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_Tfunil)
+
+        input_Mfunil = TextInput(
+            hint_text="",
+            size_hint=(0.5, 0.1),
+            pos_hint={"x": 0.05, "y": 0.337},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_Mfunil)
+        
+
+        input_Ffunil = TextInput(
+            hint_text="",
+            size_hint=(0.5, 0.1),
+            pos_hint={"x": 0.05, "y": 0.119},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_Ffunil)
+
+        input_pos_contratação = TextInput(
+            hint_text="",
+            size_hint=(0.272, 0.54),
+            pos_hint={"x": 0.705, "y": 0.16},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_pos_contratação)
+        
         
         self.add_widget(layout)
         

@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
 
 
 class AddClient6(Screen):
@@ -124,6 +125,7 @@ class AddClient6(Screen):
         next_button.bind(on_release=self.go_to_next_page)
 
         layout.add_widget(next_button)
+
         
         self.add_widget(layout)
         

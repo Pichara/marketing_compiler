@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
 
 
 class AddClient2(Screen):
@@ -121,8 +122,50 @@ class AddClient2(Screen):
             background_color=(0, 0, 0, 0)
         )
         next_button.bind(on_release=self.go_to_next_page)
-
         layout.add_widget(next_button)
+        
+        #TextInputs
+        #OPInsta
+        OP_insta = TextInput(
+            hint_text="Descreva como o Instagram será usado no projeto",
+            size_hint=(0.5, 0.18),
+            pos_hint={"x": 0.1, "y": 0.6},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(OP_insta)
+
+        #OPtiktok
+        OP_tiktok = TextInput(
+            hint_text="Descreva como o TikTok será usado no projeto",
+            size_hint=(0.5, 0.18),
+            pos_hint={"x": 0.1, "y": 0.38},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(OP_tiktok)
+
+        #OPfacebook
+        OP_facebook = TextInput(
+            hint_text="Descreva como o Facebook será usado no projeto",
+            size_hint=(0.5, 0.18),
+            pos_hint={"x": 0.1, "y": 0.16},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(OP_facebook)
         
         self.add_widget(layout)
         

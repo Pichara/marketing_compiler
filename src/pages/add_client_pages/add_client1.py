@@ -1,7 +1,7 @@
 from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.image import Image
-
+from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
@@ -119,6 +119,95 @@ class AddClient1(Screen):
         next_button.bind(on_release=self.go_to_next_page)
 
         layout.add_widget(next_button)
+        
+        
+        #TextInputs
+        #name
+        client_name = TextInput(
+            hint_text="Nome",
+            size_hint=(0.4, 0.06),
+            pos_hint={"x": 0.355, "y": 0.9},
+            multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(client_name)
+
+        #Insta
+        Input_Insta = TextInput(
+            hint_text="https://www.instagram.com/...",
+            size_hint=(0.3, 0.05),
+            pos_hint={"x": 0.1, "y": 0.63},  #Posição centralizada
+            multiline=False,
+            font_size=18,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(Input_Insta)
+
+        #TikoToko
+        Input_TikTok = TextInput(
+            hint_text="https://www.tiktok.com/...",
+            size_hint=(0.3, 0.05),
+            pos_hint={"x": 0.1, "y": 0.43},  
+            multiline=False,
+            font_size=18,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),
+            foreground_color=(0, 0, 0, 1),
+            cursor_color=(0, 0, 1, 1))
+        
+        layout.add_widget(Input_TikTok)
+        
+        #Facebook
+        Input_Facebook = TextInput(
+            hint_text="https://www.facebook.com/...",
+            size_hint=(0.3, 0.05),
+            pos_hint={"x": 0.1, "y": 0.18},  
+            multiline=False,
+            font_size=18,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),
+            foreground_color=(0, 0, 0, 1),
+            cursor_color=(0, 0, 1, 1))
+        
+        layout.add_widget(Input_Facebook)
+        
+        #GMAIL
+        Input_Gmail = TextInput(
+            hint_text="email@email.com",
+            size_hint=(0.3, 0.05),
+            pos_hint={"x": 0.65, "y": 0.63},  
+            multiline=False,
+            font_size=18,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),
+            foreground_color=(0, 0, 0, 1),
+            cursor_color=(0, 0, 1, 1))
+        
+        layout.add_widget(Input_Gmail)
+        
+        #Telefone
+        Input_Telefone = TextInput(
+            hint_text="55 (XX) XXXX-XXXX",
+            size_hint=(0.3, 0.05),
+            pos_hint={"x": 0.65, "y": 0.43},  
+            multiline=False,
+            font_size=18,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),
+            foreground_color=(0, 0, 0, 1),
+            cursor_color=(0, 0, 1, 1))
+        
+        layout.add_widget(Input_Telefone)
+
+
+        
         
         self.add_widget(layout)
         

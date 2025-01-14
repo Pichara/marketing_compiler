@@ -5,7 +5,7 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-
+from kivy.uix.textinput import TextInput
 
 class AddClient4(Screen):
     def __init__(self, **kwargs):
@@ -124,7 +124,47 @@ class AddClient4(Screen):
         next_button.bind(on_release=self.go_to_next_page)
 
         layout.add_widget(next_button)
-        
+
+        #TextInputs
+        input_big_ideia = TextInput(
+            hint_text="Qual é a estratégia principal para o crescimento do projeto em todas as redes?",
+            size_hint=(0.32, 0.53),
+            pos_hint={"x": 0.07, "y": 0.16},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_big_ideia)
+
+        input_ideias_secundarias = TextInput(
+            hint_text="Liste ideias complementares para apoiar o crescimento",
+            size_hint=(0.4, 0.24),
+            pos_hint={"x": 0.442, "y": 0.5},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_ideias_secundarias)
+
+        input_desafios = TextInput(
+            hint_text="Liste os principais desafios para alcançar o crescimento desejado",
+            size_hint=(0.4, 0.24),
+            pos_hint={"x": 0.442, "y": 0.16},
+            #multiline=False,
+            font_size=22,
+            padding=(10, 10),
+            background_color=(1, 1, 1, 0.8),  #Fundo branco translúcido
+            foreground_color=(0, 0, 0, 1),  #Texto preto
+            cursor_color=(0, 0, 1, 1)  #Cursor azul
+        )
+        layout.add_widget(input_desafios)
+
         self.add_widget(layout)
         
     def show_confirm_popup(self, instance):
